@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{ProfeTrack: Especificações do Projeto}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+O ProfeTrack é uma aplicação web destinada a facilitar o monitoramento e gerenciamento do planejamento de aulas por coordenadores escolares em instituições de ensino fundamental e médio. A aplicação visa proporcionar uma interface intuitiva para que os coordenadores possam visualizar, comentar e monitorar os planejamentos de aula dos professores, além de permitir que os professores gerenciem seus próprios planejamentos de forma eficiente. Dentro do gerenciamento de planejamento feito por um coordenador existe a possibilidade de realizar comentários e notificar o respectivo professor sobre planejamentos atrasados ou com alguma pendência.
+
+\section{Características Essenciais para Implementação no Banco de Dados}
+
+\subsection{Características de Usuário}
+\begin{itemize}
+    \item É crucial visar a simplicidade na criação de um novo perfil de usuário, destacando-se dois tipos distintos de usuários: professores e coordenadores, sendo que um coordenador também pode desempenhar o papel de professor.
+\end{itemize}
+
+\subsection{Cadastro de Disciplinas}
+\begin{itemize}
+    \item Ao considerar o cadastro de disciplinas, algumas características importantes incluem:
+    \begin{itemize}
+        \item Nome da disciplina;
+        \item Professores vinculados;
+        \item Ano letivo;
+        \item Série;
+        \item Turno;
+        \item Nível (1, 2, 3).
+    \end{itemize}
+\end{itemize}
+
+\subsection{Criação de Planejamento de Aula}
+
+\begin{itemize}
+    \item Ao considerar o planejamento de aula, algumas informações importantes incluem:
+    \begin{itemize}
+        \item Data;
+        \item Nº do Módulo;
+        \item Nº da Aula;
+        \item Conteúdo;
+        \item Meta de Aula;
+        \item Metodologia Aplicada;
+        \item Atividades Resolvidas em Sala;
+        \item Atividades para Casa;
+        \item Vinculação com a Disciplina.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Criação de Comentários}
+\begin{itemize}
+    \item É necessário apenas que o comentário seja feito e direcionado aos professores responsáveis pela disciplina.
+\end{itemize}
+\end{document}
