@@ -57,4 +57,50 @@ O ProfeTrack é uma aplicação web destinada a facilitar o monitoramento e gere
 \begin{itemize}
     \item É necessário apenas que o comentário seja feito e direcionado aos professores responsáveis pela disciplina.
 \end{itemize}
+\subsection{Normalização de Tabelas}
+A estruturação das tabelas do banco de dados segue rigorosamente os princípios de normalização, com o objetivo de otimizar a integridade e a eficiência dos dados. A seguir, detalhamos como cada tabela atende aos critérios das três formas normais (1NF, 2NF e 3NF).
+
+\subsubsection{1ª Forma Normal (1NF)}
+A 1NF requer que:
+\begin{itemize}
+    \item Todos os valores de colunas sejam atômicos, ou seja, indivisíveis.
+    \item A tabela deve possuir uma chave primária única.
+\end{itemize}
+
+\textbf{Justificativa:}
+\begin{itemize}
+    \item \textit{Tabela usuarios}: Cumpre a 1NF com valores atômicos e uma chave primária (\textit{id}), garantindo registros únicos.
+    \item \textit{Tabela usuario\_tipo}: Segue a 1NF com valores atômicos. Usa \textit{usuario\_id} e \textit{tipo} para identificação única, assegurada por uma chave estrangeira referenciando \textit{usuarios}.
+    \item \textit{Tabela disciplinas}: Em conformidade com a 1NF por ter valores atômicos e uma chave primária (\textit{id}).
+    \item \textit{Tabela planejamentos}: Adere à 1NF, possuindo valores atômicos e identificação única pela chave primária (\textit{id}).
+    \item \textit{Tabela comentario}: Observa a 1NF com valores atômicos e relação com \textit{planejamentos} através de chave estrangeira.
+    \item \textit{Tabela usuario\_disciplina}: Atende a 1NF com valores atômicos e uma chave primária (\textit{id}).
+\end{itemize}
+
+\subsubsection{2ª Forma Normal (2NF)}
+A 2NF é aplicada a tabelas já em 1NF e requer que:
+\begin{itemize}
+    \item A tabela esteja livre de dependências parciais, ou seja, todos os atributos não-chave devem depender totalmente da chave primária.
+\end{itemize}
+
+\textbf{Justificativa:}
+\begin{itemize}
+    \item \textit{Tabelas usuarios, disciplinas, e usuario\_disciplina}: Estão na 2NF, com atributos não-chave dependendo unicamente das chaves primárias.
+    \item \textit{Tabela planejamentos e comentario}: Também cumprem a 2NF, com todas as colunas não-chave dependendo integralmente da chave primária para identificação.
+    \item \textit{Tabela usuario\_tipo}: Sugerida a conformidade com a 2NF, apesar da ausência de uma chave primária composta explicitamente definida.
+\end{itemize}
+
+\subsubsection{3ª Forma Normal (3NF)}
+A 3NF é alcançada quando a tabela está em 2NF e:
+\begin{itemize}
+    \item Não possui dependências transitivas; ou seja, atributos não-chave dependem apenas da chave primária, e não de outros atributos não-chave.
+\end{itemize}
+
+\textbf{Justificativa:}
+\begin{itemize}
+    \item \textit{Todas as tabelas}: Não apresentam dependências transitivas, com cada atributo não-chave dependendo diretamente da chave primária da sua tabela.
+\end{itemize}
+
+
+    
 \end{document}
