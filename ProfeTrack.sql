@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS usuarios(
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(255)  NOT NULL,
     senha VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL
+    email VARCHAR(255) NOT NULL 
 );
 
 CREATE TABLE IF NOT EXISTS usuario_tipo(
@@ -37,21 +37,11 @@ CREATE TABLE IF NOT EXISTS planejamentos(
 
 
 CREATE TABLE IF NOT EXISTS comentario(
-    id INT PRIMARY KEY AUTO_INCREMENT,
     planejamento_id INT,
     texto TEXT,
     data DATETIME,
     FOREIGN KEY (planejamento_id) REFERENCES planejamentos(id)
 );
-
-CREATE TABLE IF NOT EXISTS usuario_planejamento(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    usuario_id INT,
-    planejamento_id INT,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
-    FOREIGN KEY (planejamento_id) REFERENCES planejamentos(id)
-);
-
 
 
 CREATE TABLE IF NOT EXISTS usuario_diciplina(
